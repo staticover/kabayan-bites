@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kabayan Bites | Authentic Filipino Restaurant – Rocky Mount, NC</title>
+  <meta name="description" content="Kabayan Bites serves authentic Filipino food in Rocky Mount, NC. Chicken Inasal, Lechon Kawali, Kamayan Feasts, Party Trays & more. Located at 139 SE Main St, Rocky Mount, NC 27801." />
+  <meta name="keywords" content="Filipino restaurant Rocky Mount NC, Kabayan Bites, chicken inasal, lechon kawali, kamayan feast, pansit, Filipino food North Carolina, party trays Filipino, lumpia" />
+  <meta property="og:title" content="Kabayan Bites | Authentic Filipino Restaurant – Rocky Mount, NC" />
+  <meta property="og:description" content="Authentic Filipino flavors in Rocky Mount, NC. Dine in or order party trays and Kamayan feasts." />
+  <meta property="og:type" content="restaurant" />
+  <meta name="geo.region" content="US-NC" />
+  <meta name="geo.placename" content="Rocky Mount, NC" />
+  <meta name="geo.position" content="35.9382;-77.7905" />
+  <meta name="ICBM" content="35.9382, -77.7905" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #F5C518;
+      --gold-deep: #D97706;
+      --gold-pale: #FEF3C7;
+      --red: #DC2626;
+      --red-light: #FEE2E2;
+      --blue: #1D4ED8;
+      --blue-light: #EFF6FF;
+      --blue-mid: #3B82F6;
+      --white: #FFFFFF;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --text: #111827;
+      --text-mid: #374151;
+      --text-light: #6B7280;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--white); border-bottom: 3px solid var(--gold);
+      padding: 0 1.5rem; display: flex; align-items: center;
+      justify-content: space-between; height: 64px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-mid); text-decoration: none; font-family: 'Bangers', cursive; font-size: 1rem; letter-spacing: 1.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 0.4rem 1.1rem; border-radius: 6px; }
+    .nav-cta:hover { background: #B91C1C !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 3px; background: var(--text); border-radius: 2px; }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--white); border-bottom: 3px solid var(--gold);
+      z-index: 999; flex-direction: column;
+      padding: 1rem 1.5rem 1.5rem; gap: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text); text-decoration: none; font-family: 'Bangers', cursive; font-size: 1.3rem; letter-spacing: 1.5px; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
+
+    /* HERO */
+    #hero {
+      min-height: 100dvh;
+      background: linear-gradient(160deg, #FFF7ED 0%, #FFFBEB 45%, #EFF6FF 100%);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 80px 1.5rem 3rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,197,24,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(29,78,216,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: min(280px, 65vw);
+      animation: floatIn 0.85s cubic-bezier(0.22,1,0.36,1) both;
+      filter: drop-shadow(0 12px 40px rgba(220,38,38,0.18));
+      position: relative; z-index: 1;
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.93); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hero-tagline {
+      font-family: 'Bangers', cursive; font-size: clamp(2.2rem, 9vw, 4.2rem);
+      color: var(--red); letter-spacing: 3px; margin-top: 1.5rem;
+      animation: floatIn 0.85s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+      line-height: 1.05; position: relative; z-index: 1;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 3vw, 1.2rem); color: var(--text-mid);
+      margin-top: 0.6rem; font-weight: 700;
+      animation: floatIn 0.85s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative; z-index: 1;
+    }
+    .hero-addr {
+      color: var(--text-light); font-size: 0.9rem; margin-top: 0.35rem;
+      animation: floatIn 0.85s 0.3s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative; z-index: 1;
+    }
+    .hero-btns {
+      display: flex; gap: 0.85rem; margin-top: 2rem; flex-wrap: wrap;
+      justify-content: center;
+      animation: floatIn 0.85s 0.4s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative; z-index: 1;
+    }
+    .btn {
+      display: inline-block; padding: 0.85rem 1.85rem; border-radius: 8px;
+      font-family: 'Bangers', cursive; font-size: 1.1rem; letter-spacing: 2px;
+      text-decoration: none; transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer; border: none;
+    }
+    .btn:active { transform: scale(0.97) !important; }
+    .btn-red { background: var(--red); color: var(--white); box-shadow: 0 4px 18px rgba(220,38,38,0.3); }
+    .btn-red:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(220,38,38,0.4); }
+    .btn-gold { background: var(--gold); color: var(--text); box-shadow: 0 4px 18px rgba(245,197,24,0.35); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,197,24,0.5); }
+    .btn-outline-blue { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+    .btn-outline-blue:hover { background: var(--blue-light); }
+
+    /* ABOUT */
+    #about { background: var(--red); padding: 3.5rem 1.5rem; text-align: center; }
+    #about h2 { font-family: 'Bangers', cursive; font-size: clamp(1.9rem, 6vw, 3rem); color: var(--white); letter-spacing: 2px; }
+    #about p { max-width: 620px; margin: 1rem auto 0; font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.9); font-weight: 600; }
+
+    /* SECTIONS */
+    section { padding: 4.5rem 1.5rem; }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-label { font-family: 'Bangers', cursive; font-size: clamp(2rem, 7vw, 3rem); letter-spacing: 3px; color: var(--red); }
+    .divider { width: 56px; height: 4px; background: var(--gold); margin: 0.6rem auto 0; border-radius: 2px; }
+    .section-header p { color: var(--text-light); margin-top: 0.75rem; font-size: 0.9rem; }
+
+    /* MENU */
+    #menu { background: var(--gray-50); }
+    .menu-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+    .tab-btn {
+      padding: 0.5rem 1.1rem; border-radius: 50px; border: 2px solid var(--gray-200);
+      background: var(--white); color: var(--text-mid); font-family: 'Bangers', cursive;
+      font-size: 0.95rem; letter-spacing: 1.5px; cursor: pointer; transition: all 0.18s;
+    }
+    .tab-btn:hover { border-color: var(--red); color: var(--red); }
+    .tab-btn.active { background: var(--red); border-color: var(--red); color: var(--white); box-shadow: 0 4px 14px rgba(220,38,38,0.25); }
+    .menu-section { display: none; }
+    .menu-section.active { display: block; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+      gap: 1rem; max-width: 920px; margin: 0 auto;
+    }
+
+    /* MENU CARDS */
+    .menu-card {
+      background: var(--white); border-radius: 14px;
+      padding: 1.1rem 1.25rem 1.1rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 14px rgba(0,0,0,0.06);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; transition: transform 0.18s, box-shadow 0.18s;
+      position: relative; overflow: hidden; border: 1.5px solid var(--gray-100);
+    }
+    .menu-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 5px; background: var(--gold);
+    }
+    .menu-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); border-color: var(--gray-200); }
+    .menu-card-info h3 { font-weight: 900; font-size: 0.98rem; color: var(--text); line-height: 1.3; }
+    .menu-card-info p { font-size: 0.78rem; color: var(--text-light); margin-top: 0.3rem; line-height: 1.45; }
+    .menu-price {
+      font-family: 'Bangers', cursive; font-size: 1.3rem; color: var(--red);
+      letter-spacing: 1px; white-space: nowrap; background: var(--red-light);
+      padding: 0.3rem 0.7rem; border-radius: 8px; flex-shrink: 0;
+    }
+
+    /* KAMAYAN */
+    #kamayan { background: linear-gradient(160deg, #FFFBEB 0%, #FFF7ED 60%, #FEF3C7 100%); }
+    .kamayan-what {
+      background: var(--white); border: 2px solid var(--gold); border-radius: 16px;
+      padding: 1.75rem 1.5rem; max-width: 640px; margin: 0 auto 2.5rem;
+      text-align: center; box-shadow: 0 4px 20px rgba(245,197,24,0.12);
+    }
+    .kamayan-what h3 { font-family: 'Bangers', cursive; font-size: 1.5rem; color: var(--gold-deep); letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .kamayan-what p { font-size: 0.95rem; line-height: 1.75; color: var(--text-mid); }
+    .kamayan-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.25rem; max-width: 680px; margin: 0 auto 1.5rem; }
+    .kamayan-card {
+      background: var(--white); border: 2px solid var(--gray-200); border-radius: 16px;
+      padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .kamayan-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(0,0,0,0.11); }
+    .kamayan-card.premium { border-color: var(--gold); background: linear-gradient(160deg, #FFFBEB, #fff); }
+    .kamayan-badge {
+      display: inline-block; background: var(--red-light); color: var(--red);
+      font-family: 'Bangers', cursive; font-size: 0.78rem; letter-spacing: 1.5px;
+      padding: 0.25rem 0.85rem; border-radius: 50px; margin-bottom: 0.85rem;
+    }
+    .kamayan-card.premium .kamayan-badge { background: var(--gold-pale); color: var(--gold-deep); }
+    .kamayan-card h3 { font-family: 'Bangers', cursive; font-size: 1.8rem; color: var(--text); letter-spacing: 2px; }
+    .kamayan-card .price { font-family: 'Bangers', cursive; font-size: 3rem; color: var(--red); margin: 0.35rem 0 0.5rem; line-height: 1; }
+    .kamayan-card.premium .price { color: var(--gold-deep); }
+    .kamayan-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .book-notice {
+      text-align: center; background: var(--white); border: 1.5px solid var(--gold);
+      border-radius: 10px; padding: 1rem 1.5rem; max-width: 500px; margin: 0 auto;
+      font-size: 0.9rem; color: var(--text-mid); box-shadow: 0 2px 10px rgba(245,197,24,0.1);
+    }
+
+    /* PARTY TRAYS */
+    #trays { background: var(--white); }
+    .half-tray-notice {
+      text-align: center; background: var(--blue); color: var(--white);
+      font-weight: 800; font-size: 0.9rem; padding: 0.75rem 1.5rem;
+      border-radius: 50px; max-width: 380px; margin: 0 auto 2.5rem;
+      box-shadow: 0 4px 16px rgba(29,78,216,0.25);
+    }
+    .tray-cat-label {
+      font-family: 'Bangers', cursive; font-size: 1.3rem; letter-spacing: 2px;
+      color: var(--blue); max-width: 860px; margin: 0 auto 0.85rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .tray-cat-label::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, var(--blue-mid), transparent); }
+    .tray-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 0.85rem; max-width: 860px; margin: 0 auto; }
+    .tray-card {
+      background: var(--gray-50); border-radius: 12px; padding: 1rem 1.1rem;
+      border: 1.5px solid var(--gray-200); display: flex;
+      justify-content: space-between; align-items: center; gap: 0.75rem;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .tray-card:hover { border-color: var(--blue-mid); box-shadow: 0 4px 16px rgba(29,78,216,0.1); }
+    .tray-card h3 { font-weight: 800; font-size: 0.92rem; color: var(--text); }
+    .tray-card p { font-size: 0.78rem; color: var(--text-light); margin-top: 0.15rem; }
+    .tray-price {
+      font-family: 'Bangers', cursive; font-size: 1.15rem; color: var(--blue);
+      white-space: nowrap; background: var(--blue-light);
+      padding: 0.25rem 0.6rem; border-radius: 6px; flex-shrink: 0;
+    }
+
+    /* LOCATION */
+    #location { background: var(--gray-50); padding: 4.5rem 1.5rem; }
+    .location-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    .location-info h2 { font-family: 'Bangers', cursive; font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--red); letter-spacing: 2px; }
+    .location-info p { color: var(--text-mid); margin-top: 0.85rem; line-height: 1.7; }
+    .location-info a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    .location-info a:hover { text-decoration: underline; }
+    .map-embed { border-radius: 14px; overflow: hidden; border: 2px solid var(--gray-200); box-shadow: 0 8px 32px rgba(0,0,0,0.1); aspect-ratio: 4/3; width: 100%; }
+    .map-embed iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* SOCIAL */
+    #social { background: var(--gold); padding: 3.5rem 1.5rem; text-align: center; }
+    #social h2 { font-family: 'Bangers', cursive; font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--text); letter-spacing: 3px; }
+    #social p { color: var(--text-mid); margin: 0.5rem auto 1.75rem; max-width: 460px; font-size: 0.95rem; font-weight: 700; }
+    .social-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.8rem 1.75rem; border-radius: 8px; font-family: 'Bangers', cursive;
+      font-size: 1.1rem; letter-spacing: 1.5px; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+    .social-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .social-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+    .social-btn-tiktok { background: #111; color: #fff; }
+    .social-btn-fb { background: #1877F2; color: #fff; }
+
+    /* FOOTER */
+    footer { background: var(--text); padding: 2rem 1.5rem; text-align: center; color: rgba(255,255,255,0.45); font-size: 0.82rem; }
+
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .location-inner { grid-template-columns: 1fr; }
+      .map-embed { aspect-ratio: 1/1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo"><img src="IMG_5209.png" alt="Kabayan Bites Logo" /></a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#kamayan">Kamayan</a></li>
+    <li><a href="#trays">Party Trays</a></li>
+    <li><a href="#location">Find Us</a></li>
+    <li><a href="tel:+1" class="nav-cta">Order Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Open menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#menu" onclick="closeMobile()">Menu</a>
+  <a href="#kamayan" onclick="closeMobile()">Kamayan Feast</a>
+  <a href="#trays" onclick="closeMobile()">Party Trays</a>
+  <a href="#location" onclick="closeMobile()">Find Us</a>
+  <a href="tel:+1" onclick="closeMobile()">Order Now</a>
+</div>
+
+<section id="hero">
+  <img src="IMG_5209.png" alt="Kabayan Bites – Authentic Filipino Food Rocky Mount NC" class="hero-logo" />
+  <h1 class="hero-tagline">Authentic Filipino Flavors</h1>
+  <p class="hero-sub">Rocky Mount's Home for Pinoy Comfort Food</p>
+  <p class="hero-addr">139 SE Main St, Rocky Mount, NC 27801</p>
+  <div class="hero-btns">
+    <a href="#menu" class="btn btn-red">View Menu</a>
+    <a href="#kamayan" class="btn btn-gold">Kamayan Feast</a>
+    <a href="#trays" class="btn btn-outline-blue">Party Trays</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Kain Tayo! — Let's Eat!</h2>
+  <p>Kabayan Bites brings the bold, soulful flavors of the Philippines straight to Rocky Mount. From sizzling Chicken Inasal to fall-off-the-bone Lechon Kawali, every plate is made with love and served with pride.</p>
+</section>
+
+<section id="menu">
+  <div class="section-header">
+    <span class="section-label">Our Menu</span>
+    <div class="divider"></div>
+    <p>All plates come with your choice of Steamed Rice or Pansit (Bihon/Canton) unless noted.</p>
+  </div>
+  <div class="menu-tabs">
+    <button class="tab-btn active" onclick="showTab('chicken',this)">Chicken</button>
+    <button class="tab-btn" onclick="showTab('pork',this)">Pork</button>
+    <button class="tab-btn" onclick="showTab('silog',this)">Silog</button>
+    <button class="tab-btn" onclick="showTab('noodles',this)">Noodles</button>
+    <button class="tab-btn" onclick="showTab('sides',this)">Sides</button>
+    <button class="tab-btn" onclick="showTab('drinks',this)">Drinks</button>
+  </div>
+
+  <div class="menu-section active" id="tab-chicken">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Inasal</h3><p>Quarter chicken, grilled Filipino-style<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Wings</h3><p>5 pcs<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Adobo</h3><p>Slow-braised in vinegar & soy<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+    </div>
+  </div>
+
+  <div class="menu-section" id="tab-pork">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Pork BBQ</h3><p>2 sticks, marinated pork skewers<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Lechon Kawali</h3><p>Deep-fried crispy pork belly<br>Choice of steamed rice or pansit canton</p></div><span class="menu-price">$13.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Pork Adobo</h3><p>Classic braised pork in vinegar & soy<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+    </div>
+  </div>
+
+  <div class="menu-section" id="tab-silog">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Tapsilog</h3><p>Beef tapa + sinangag + itlog</p></div><span class="menu-price">$13.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Tocilog</h3><p>Sweet cured pork tocino + sinangag + itlog</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Longsilog</h3><p>Filipino longganisa + sinangag + itlog</p></div><span class="menu-price">$12.99</span></div>
+    </div>
+  </div>
+
+  <div class="menu-section" id="tab-noodles">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Pansit Canton</h3><p>Stir-fried egg noodles with vegetables & protein</p></div><span class="menu-price">$10.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Pansit Bihon</h3><p>Stir-fried rice vermicelli with vegetables & protein</p></div><span class="menu-price">$10.99</span></div>
+    </div>
+  </div>
+
+  <div class="menu-section" id="tab-sides">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Lumpia</h3><p>Filipino spring rolls, crispy & golden</p></div><span class="menu-price">$5.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Siomai</h3><p>4 pcs steamed Filipino dumplings</p></div><span class="menu-price">$5.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Extra Rice</h3><p>Steamed white rice</p></div><span class="menu-price">$2.00</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Garlic Rice Upgrade</h3><p>Upgrade your rice to sinangag</p></div><span class="menu-price">$1.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Extra Egg</h3><p>Fried egg add-on</p></div><span class="menu-price">$1.75</span></div>
+    </div>
+  </div>
+
+  <div class="menu-section" id="tab-drinks">
+    <div class="menu-grid">
+      <div class="menu-card"><div class="menu-card-info"><h3>Soda</h3><p>Can</p></div><span class="menu-price">$2.25</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Bottled Water</h3><p></p></div><span class="menu-price">$1.50</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Boba Tea</h3><p>Classic · Okinawa · Taro</p></div><span class="menu-price">$5.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Fruit Tea</h3><p>Mango · Strawberry · Passion Fruit</p></div><span class="menu-price">$5.99</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kamayan">
+  <div class="section-header">
+    <span class="section-label">Kamayan Feast</span>
+    <div class="divider" style="background:var(--red);"></div>
+  </div>
+  <div class="kamayan-what">
+    <h3>What is Kamayan?</h3>
+    <p>Kamayan is the traditional Filipino style of eating with your hands — no utensils, just a banana leaf spread overflowing with rice, grilled meats, seafood, vegetables, and more. It's communal, joyful, and deeply rooted in Filipino culture. The perfect way to share food with the people you love.</p>
+  </div>
+  <div class="kamayan-cards">
+    <div class="kamayan-card">
+      <div class="kamayan-badge">GOOD FOR 6–8 PEOPLE</div>
+      <h3>Basic Kamayan</h3>
+      <div class="price">$199</div>
+      <p>A full spread of our signature Filipino dishes served the traditional kamayan way. Feeds a crowd, feeds the soul.</p>
+    </div>
+    <div class="kamayan-card premium">
+      <div class="kamayan-badge">PREMIUM · 6–8 PEOPLE</div>
+      <h3>Seafood Kamayan</h3>
+      <div class="price">$249</div>
+      <p>Everything in the Basic Kamayan plus premium seafood additions. The ultimate Kabayan experience.</p>
+    </div>
+  </div>
+  <div class="book-notice">
+    <strong>Please book in advance.</strong> Kamayan feasts are prepared fresh and require prior reservation to guarantee availability.
+  </div>
+</section>
+
+<section id="trays">
+  <div class="section-header">
+    <span class="section-label">Party Trays</span>
+    <div class="divider" style="background:var(--blue);"></div>
+    <p>Perfect for events, celebrations, and family gatherings.</p>
+  </div>
+  <div class="half-tray-notice">Also available in Half Tray — ask us for details!</div>
+
+  <div class="tray-cat-label">Rice & Noodles</div>
+  <div class="tray-grid">
+    <div class="tray-card"><div><h3>Steamed Rice Tray</h3></div><span class="tray-price">$24.99</span></div>
+    <div class="tray-card"><div><h3>Garlic Rice Tray</h3></div><span class="tray-price">$39.99</span></div>
+    <div class="tray-card"><div><h3>Pansit Bihon or Canton</h3><p>Chicken</p></div><span class="tray-price">$59.99</span></div>
+    <div class="tray-card"><div><h3>Pansit Bihon or Canton</h3><p>Pork</p></div><span class="tray-price">$69.99</span></div>
+    <div class="tray-card"><div><h3>Pansit Bihon or Canton</h3><p>Shrimp</p></div><span class="tray-price">$69.99</span></div>
+    <div class="tray-card"><div><h3>Pansit Bihon or Canton</h3><p>All</p></div><span class="tray-price">$79.99</span></div>
+  </div>
+
+  <div class="tray-cat-label" style="margin-top:2rem;">Mains</div>
+  <div class="tray-grid">
+    <div class="tray-card"><div><h3>Lumpia Tray</h3><p>50 pcs</p></div><span class="tray-price">$69.99</span></div>
+    <div class="tray-card"><div><h3>Pork BBQ Tray</h3><p>20 pcs</p></div><span class="tray-price">$89.99</span></div>
+    <div class="tray-card"><div><h3>Chicken Inasal Tray</h3><p>10 pcs</p></div><span class="tray-price">$79.99</span></div>
+    <div class="tray-card"><div><h3>Chicken Adobo Tray</h3></div><span class="tray-price">$79.99</span></div>
+    <div class="tray-card"><div><h3>Pork Adobo Tray</h3></div><span class="tray-price">$89.99</span></div>
+    <div class="tray-card"><div><h3>Lechon Kawali Tray</h3></div><span class="tray-price">$99.99</span></div>
+    <div class="tray-card"><div><h3>Fresh Fruit Tray</h3></div><span class="tray-price">$34.99</span></div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="location-inner">
+    <div class="location-info">
+      <h2>Find Us</h2>
+      <p>
+        <strong>Kabayan Bites</strong><br>
+        139 SE Main St<br>
+        Rocky Mount, NC 27801<br><br>
+        <a href="https://maps.google.com/?q=139+SE+Main+St+Rocky+Mount+NC+27801" target="_blank">Get Directions →</a>
+      </p>
+      <p style="margin-top:1.5rem;">
+        <a href="https://www.tiktok.com/@kabayan.bites" target="_blank" rel="noopener">TikTok: @kabayan.bites</a><br>
+        <a href="https://www.facebook.com/share/1DkxsvD4NA/" target="_blank" rel="noopener">Facebook: Kabayan Bites</a>
+      </p>
+    </div>
+    <div class="map-embed">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.5!2d-77.7905!3d35.9382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ae38c7c7e4b3b3%3A0x1!2s139+SE+Main+St%2C+Rocky+Mount%2C+NC+27801!5e1!3m2!1sen!2sus!4v1"
+        allowfullscreen title="Kabayan Bites Location"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="social">
+  <h2>Follow The Flavor</h2>
+  <p>Specials, new dishes, and all the good stuff.</p>
+  <div class="social-btns">
+    <a href="https://www.tiktok.com/@kabayan.bites?_r=1&_t=ZP-96CHZhXsQIR" target="_blank" rel="noopener" class="social-btn social-btn-tiktok">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+      TikTok
+    </a>
+    <a href="https://www.facebook.com/share/1DkxsvD4NA/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-btn social-btn-fb">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      Facebook
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Kabayan Bites · 139 SE Main St, Rocky Mount, NC 27801</p>
+  <p style="margin-top:0.35rem;">Authentic Filipino Restaurant · Rocky Mount, NC</p>
+</footer>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!ham.contains(e.target) && !mob.contains(e.target)) mob.classList.remove('open');
+  });
+  function closeMobile() { mob.classList.remove('open'); }
+  function showTab(id, btn) {
+    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
