@@ -26,6 +26,7 @@
       --blue: #1D4ED8;
       --blue-light: #EFF6FF;
       --blue-mid: #3B82F6;
+
       --white: #FFFFFF;
       --gray-50: #F9FAFB;
       --gray-100: #F3F4F6;
@@ -182,6 +183,28 @@
       font-family: 'Bangers', cursive; font-size: 1.3rem; color: var(--red);
       letter-spacing: 1px; white-space: nowrap; background: var(--red-light);
       padding: 0.3rem 0.7rem; border-radius: 8px; flex-shrink: 0;
+    }
+    .menu-price-stack {
+      display: flex; flex-direction: column; gap: 0.3rem; flex-shrink: 0; align-items: flex-end;
+    }
+    .menu-price-stack .menu-price { font-size: 1rem; }
+    .menu-price-label { font-size: 0.65rem; color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-align: right; margin-top: -0.15rem; }
+
+    /* ADD-ON CHIPS */
+    .addon-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .addon-chip {
+      font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.55rem; border-radius: 50px;
+      background: var(--gold-pale); color: var(--gold-deep); border: 1px solid var(--gold);
+    }
+
+
+
+    /* BAKERY NOTE */
+    .bakery-note {
+      max-width: 920px; margin: 0 auto 2rem;
+      background: var(--gold-pale); border: 1.5px solid var(--gold);
+      border-radius: 10px; padding: 0.85rem 1.25rem;
+      font-size: 0.88rem; color: var(--gold-deep); font-weight: 700; text-align: center;
     }
 
     /* KAMAYAN */
@@ -341,55 +364,209 @@
     <button class="tab-btn" onclick="showTab('noodles',this)">Noodles</button>
     <button class="tab-btn" onclick="showTab('sides',this)">Sides</button>
     <button class="tab-btn" onclick="showTab('drinks',this)">Drinks</button>
+    <button class="tab-btn" onclick="showTab('bread',this)">Bread & Pastries</button>
   </div>
 
+  <!-- CHICKEN -->
   <div class="menu-section active" id="tab-chicken">
     <div class="menu-grid">
-      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Inasal</h3><p>Quarter chicken, grilled Filipino-style<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Wings</h3><p>5 pcs<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Chicken Adobo</h3><p>Slow-braised in vinegar & soy<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Chicken Inasal</h3>
+          <p>Quarter chicken, grilled Filipino-style<br>Choice of steamed rice or pansit bihon/canton</p>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Chicken Wings</h3>
+          <p>5 pcs<br>Choice of steamed rice or pansit bihon/canton</p>
+        </div>
+        <span class="menu-price">$13.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Chicken Adobo</h3>
+          <p>Slow-braised in vinegar &amp; soy<br>Choice of steamed rice or pansit bihon/canton</p>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
     </div>
   </div>
 
+  <!-- PORK -->
   <div class="menu-section" id="tab-pork">
     <div class="menu-grid">
-      <div class="menu-card"><div class="menu-card-info"><h3>Pork BBQ</h3><p>2 sticks, marinated pork skewers<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Lechon Kawali</h3><p>Deep-fried crispy pork belly<br>Choice of steamed rice or pansit canton</p></div><span class="menu-price">$13.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Pork Adobo</h3><p>Classic braised pork in vinegar & soy<br>Choice of steamed rice or pansit bihon/canton</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Pork BBQ</h3>
+          <p>2 sticks, marinated pork skewers<br>Choice of steamed rice or pansit bihon/canton</p>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Lechon Kawali</h3>
+          <p>Deep-fried crispy pork belly<br>Choice of steamed rice or pansit canton</p>
+          <div class="addon-row">
+            <span class="addon-chip">½ lb — $14.99</span>
+            <span class="addon-chip">1 lb — $24.99</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Pork Adobo</h3>
+          <p>Classic braised pork in vinegar &amp; soy<br>Choice of steamed rice or pansit bihon/canton</p>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
     </div>
   </div>
 
+  <!-- SILOG -->
   <div class="menu-section" id="tab-silog">
     <div class="menu-grid">
-      <div class="menu-card"><div class="menu-card-info"><h3>Tapsilog</h3><p>Beef tapa + sinangag + itlog</p></div><span class="menu-price">$13.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Tocilog</h3><p>Sweet cured pork tocino + sinangag + itlog</p></div><span class="menu-price">$12.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Longsilog</h3><p>Filipino longganisa + sinangag + itlog</p></div><span class="menu-price">$12.99</span></div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Tapsilog</h3>
+          <p>Beef tapa + sinangag + itlog</p>
+          <div class="addon-row"><span class="addon-chip">Double meat +$5</span></div>
+        </div>
+        <span class="menu-price">$13.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Tocilog</h3>
+          <p>Sweet cured pork tocino + sinangag + itlog</p>
+          <div class="addon-row"><span class="addon-chip">Double meat +$5</span></div>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Longsilog</h3>
+          <p>Filipino longganisa + sinangag + itlog</p>
+          <div class="addon-row"><span class="addon-chip">Double meat +$5</span></div>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
     </div>
   </div>
 
+  <!-- NOODLES -->
   <div class="menu-section" id="tab-noodles">
     <div class="menu-grid">
-      <div class="menu-card"><div class="menu-card-info"><h3>Pansit Canton</h3><p>Stir-fried egg noodles with vegetables & protein</p></div><span class="menu-price">$10.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Pansit Bihon</h3><p>Stir-fried rice vermicelli with vegetables & protein</p></div><span class="menu-price">$10.99</span></div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Pansit Canton</h3>
+          <p>Stir-fried egg noodles with vegetables &amp; protein</p>
+          <div class="addon-row">
+            <span class="addon-chip">Add chicken +$3</span>
+            <span class="addon-chip">Add pork +$5</span>
+            <span class="addon-chip">Add shrimp +$5</span>
+            <span class="addon-chip">Add all +$8</span>
+          </div>
+        </div>
+        <span class="menu-price">$10.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Pansit Bihon</h3>
+          <p>Stir-fried rice vermicelli with vegetables &amp; protein</p>
+          <div class="addon-row">
+            <span class="addon-chip">Add chicken +$3</span>
+            <span class="addon-chip">Add pork +$5</span>
+            <span class="addon-chip">Add shrimp +$5</span>
+            <span class="addon-chip">Add all +$8</span>
+          </div>
+        </div>
+        <span class="menu-price">$10.99</span>
+      </div>
     </div>
   </div>
 
+  <!-- SIDES -->
   <div class="menu-section" id="tab-sides">
     <div class="menu-grid">
-      <div class="menu-card"><div class="menu-card-info"><h3>Lumpia</h3><p>Filipino spring rolls, crispy & golden</p></div><span class="menu-price">$5.99</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Lumpia</h3><p>Filipino spring rolls, crispy &amp; golden</p></div><span class="menu-price">$5.99</span></div>
       <div class="menu-card"><div class="menu-card-info"><h3>Siomai</h3><p>4 pcs steamed Filipino dumplings</p></div><span class="menu-price">$5.99</span></div>
       <div class="menu-card"><div class="menu-card-info"><h3>Extra Rice</h3><p>Steamed white rice</p></div><span class="menu-price">$2.00</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Garlic Rice Upgrade</h3><p>Upgrade your rice to sinangag</p></div><span class="menu-price">$1.99</span></div>
-      <div class="menu-card"><div class="menu-card-info"><h3>Extra Egg</h3><p>Fried egg add-on</p></div><span class="menu-price">$1.75</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Garlic Rice Upgrade</h3><p>Upgrade your rice to sinangag</p></div><span class="menu-price">$2.00</span></div>
+      <div class="menu-card"><div class="menu-card-info"><h3>Extra Egg</h3><p>Fried egg add-on</p></div><span class="menu-price">$2.50</span></div>
     </div>
   </div>
 
+  <!-- DRINKS -->
   <div class="menu-section" id="tab-drinks">
     <div class="menu-grid">
       <div class="menu-card"><div class="menu-card-info"><h3>Soda</h3><p>Can</p></div><span class="menu-price">$2.25</span></div>
       <div class="menu-card"><div class="menu-card-info"><h3>Bottled Water</h3><p></p></div><span class="menu-price">$1.50</span></div>
       <div class="menu-card"><div class="menu-card-info"><h3>Boba Tea</h3><p>Classic · Okinawa · Taro</p></div><span class="menu-price">$5.99</span></div>
       <div class="menu-card"><div class="menu-card-info"><h3>Fruit Tea</h3><p>Mango · Strawberry · Passion Fruit</p></div><span class="menu-price">$5.99</span></div>
+    </div>
+  </div>
+
+  <!-- BREAD & PASTRIES -->
+  <div class="menu-section" id="tab-bread">
+    <div class="bakery-note">Fresh-baked Filipino breads &amp; pastries — available while supplies last. Sold by the bag.</div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Regular Pandesal</h3>
+          <p>8 pcs jumbo buns per bag — classic Filipino soft rolls</p>
+        </div>
+        <span class="menu-price">$8.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Ube Cheese Pandesal</h3>
+          <p>8 pcs jumbo buns per bag — purple yam &amp; cheese filled</p>
+        </div>
+        <span class="menu-price">$10.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Spanish Bread</h3>
+          <p>8 pcs per bag — buttery rolled pastry with sweet filling</p>
+        </div>
+        <span class="menu-price">$9.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Pandecoco</h3>
+          <p>8 pcs per bag — sweet coconut-filled bread rolls</p>
+        </div>
+        <span class="menu-price">$10.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Cheesy Ensymada</h3>
+          <p>4 pcs — fluffy coiled pastry topped with butter, sugar &amp; cheese</p>
+        </div>
+        <span class="menu-price">$12.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Braso De Mercedes</h3>
+          <p>4 pcs — meringue roll with creamy custard filling</p>
+        </div>
+        <span class="menu-price">$9.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Cassava Cake</h3>
+          <p>6-inch round — rich, dense Filipino cassava cake</p>
+        </div>
+        <span class="menu-price">$15.99</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h3>Customized Cakes</h3>
+          <p>Made to order for all occasions — birthdays, celebrations &amp; more. Contact us for pricing &amp; availability.</p>
+        </div>
+        <span class="menu-price" style="font-size:0.85rem; letter-spacing:0.5px;">Order</span>
+      </div>
     </div>
   </div>
 </section>
@@ -412,9 +589,9 @@
     </div>
     <div class="kamayan-card premium">
       <div class="kamayan-badge">PREMIUM · 6–8 PEOPLE</div>
-      <h3>Seafood Kamayan</h3>
+      <h3>Premium Kamayan</h3>
       <div class="price">$249</div>
-      <p>Everything in the Basic Kamayan plus premium seafood additions. The ultimate Kabayan experience.</p>
+      <p>Everything in the Basic Kamayan plus premium additions. The ultimate Kabayan experience.</p>
     </div>
   </div>
   <div class="book-notice">
@@ -430,7 +607,7 @@
   </div>
   <div class="half-tray-notice">Also available in Half Tray — ask us for details!</div>
 
-  <div class="tray-cat-label">Rice & Noodles</div>
+  <div class="tray-cat-label">Rice &amp; Noodles</div>
   <div class="tray-grid">
     <div class="tray-card"><div><h3>Steamed Rice Tray</h3></div><span class="tray-price">$24.99</span></div>
     <div class="tray-card"><div><h3>Garlic Rice Tray</h3></div><span class="tray-price">$39.99</span></div>
@@ -442,12 +619,12 @@
 
   <div class="tray-cat-label" style="margin-top:2rem;">Mains</div>
   <div class="tray-grid">
-    <div class="tray-card"><div><h3>Lumpia Tray</h3><p>50 pcs</p></div><span class="tray-price">$69.99</span></div>
+    <div class="tray-card"><div><h3>Lumpia Tray</h3><p>50 pcs</p></div><span class="tray-price">$74.50</span></div>
+    <div class="tray-card"><div><h3>Lechon Kawali Tray</h3><p>3 lbs</p></div><span class="tray-price">$74.50</span></div>
     <div class="tray-card"><div><h3>Pork BBQ Tray</h3><p>20 pcs</p></div><span class="tray-price">$89.99</span></div>
     <div class="tray-card"><div><h3>Chicken Inasal Tray</h3><p>10 pcs</p></div><span class="tray-price">$79.99</span></div>
     <div class="tray-card"><div><h3>Chicken Adobo Tray</h3></div><span class="tray-price">$79.99</span></div>
     <div class="tray-card"><div><h3>Pork Adobo Tray</h3></div><span class="tray-price">$89.99</span></div>
-    <div class="tray-card"><div><h3>Lechon Kawali Tray</h3></div><span class="tray-price">$99.99</span></div>
     <div class="tray-card"><div><h3>Fresh Fruit Tray</h3></div><span class="tray-price">$34.99</span></div>
   </div>
 </section>
